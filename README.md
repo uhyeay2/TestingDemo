@@ -3,7 +3,7 @@
 
 This project is meant to introduce you to Unit Tests and Integration Tests. Here we will cover both kinds of tests and discuss the differences between them.
 
-Below is some context on what a unit an integration test are, as well as some addition definiton to help this demo make sense.
+Below is some information to help understand the differences between Unit and Integration Tests.
 
 ## What is a 'Dependency' ?
 
@@ -11,7 +11,7 @@ Below is some context on what a unit an integration test are, as well as some ad
 
 [Quote Source: TutorialsPoint.com](https://www.tutorialspoint.com/explain-dependency-injection-in-chash#:~:text=Explain%20dependency%20injection%20in%20C%23&text=A%20dependency%20is%20an%20object,it%20construct%20the%20objects%20themselves.)
 
-Long story short, your class has a 'Dependency' on another class if it must use that class to perform its actions.
+Long story short, your class has a 'Dependency' on another class/interface if it must use that class to perform its actions.
 
 ## What is a 'Unit Test' ?
 
