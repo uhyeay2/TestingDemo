@@ -39,4 +39,4 @@ Essentially an Integration Test will test a class/function while using the concr
 
 ## Conclusion
 
-A unit test will test a class/function without relying on the dependencies that class/function relies on. Alternatively, an Integration Test will test a class/function while using the concrete/real implementation. Unit tests are honed into one unit, making sure that it individually behaves the way it should, while Integration tests ensure that the unit behaves as it should when integrated with its dependencies (other classes it relies on).
+A unit test will test a class/function without relying on the dependencies that class/function relies on. Alternatively, an Integration Test will test a class/function while using the concrete/real implementation. Unit tests are honed into one unit, making sure that it individually behaves the way it should, while Integration tests ensure that the unit behaves as it should when integrated with its dependencies.
