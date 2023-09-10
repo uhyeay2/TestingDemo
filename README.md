@@ -35,7 +35,7 @@ Notice that the quote above mentions isolation. This means we are testing a unit
 
 [Quote Source: Medium.com](https://medium.com/@samuilovas/c-integration-tests-with-code-examples-505c9baaa02f)
 
-Notice the difference between Unit Tests and Integration Tests. As mentioned previously, Unit Tests will test a class/function while isolating it from any dependencies it may rely on. Alternatively, an Integration Test will test a class/function while using the concrete/real implementation that the unit under test relies on.
+Essentially an Integration Test will test a class/function while using the concrete/real implementation that the unit under test relies on. If you are testing a method/class that makes a call to a Database or an External API, that would be another example of an Integration Test, because in those scenarios we are using the actual Database or API to conduct our testing.
 
 ## Conclusion
 
