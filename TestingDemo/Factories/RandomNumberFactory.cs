@@ -9,26 +9,26 @@ namespace TestingDemo.Factories
 
         Since the RandomCharacterFactory is coupled to this class, we cannot control the output in a test. Any test that
         we create for this class will inherently be an integration test, since it will be testing this class integrated
-        with the RandomCharacterFactory that it depends on.
+        with the RandomCharacterFactory that it initializes inside the GetRandomString() method.
 
         The most testing we could accomplish on this class would be to ensure that it always returns one of any of the
-        expected outputs. We cannot specifically ensure that if we get '0' from the RandomNumberFactory that we will 
+        expected outputs. We cannot specifically ensure that if we get '0' from the RandomCharacterFactory that we will 
         return "Zero" - this cannot be confirmed without manually debugging the code and seeing what happens at run time.
     */
     public class RandomNumberFactory : IRandomStringFactory
     {
-        private readonly IRandomCharacterFactory _randomNumberFactory;
-
         public RandomNumberFactory()
         {
-            var numbers = new[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-
-            _randomNumberFactory = new RandomCharacterFactory(new Random(), numbers);
+            
         }
 
         public string GetRandomString()
         {
-            var randomNumber = _randomNumberFactory.GetRandomCharacter();
+            var numbers = new[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+
+            var characterFactory = new RandomCharacterFactory(new Random(), numbers);
+
+            var randomNumber = characterFactory.GetRandomCharacter();
 
             return randomNumber switch
             {
