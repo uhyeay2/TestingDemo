@@ -6,32 +6,6 @@ namespace TestingDemo.Tests
 {
     public class RandomCharacterFactoryTests
     {
-        #region Integration Tests
-
-        /*
-            This test would be considered an integration test due to the fact that we are testing our class while integrated with a real instance of the 
-            Random class. There is value in this test, because we are able to ensure that everything is functioning together properly. However, we are 
-            limited in a way since we cannot set up our test to assert the exact character that is returned.
-        */
-
-        [Theory]
-        [InlineData("abcdefg")]
-        [InlineData("123456")]
-        [InlineData("xyz")]
-        [InlineData("#")]
-        public void GetRandomCharacter_ShouldReturn_AnyExpectedCharacter(string expectedCharacters)
-        {
-            // Initialize the class using concrete implementation of Random class and the expected
-            var randomCharacterFactory = new RandomCharacterFactory(new Random(), expectedCharacters.ToArray());
-
-            // Call the method we are testing
-            var result = randomCharacterFactory.GetRandomCharacter();
-
-            Assert.True(expectedCharacters.Contains(result));
-        }
-
-        #endregion
-
         #region Unit Tests
 
         /*
@@ -57,7 +31,7 @@ namespace TestingDemo.Tests
         public void GetRandomCharacter_Given_RandomReturnsIndex_ShouldReturn_CharacterPool_ElementAtIndex(int index)
         {
             // Initialize Dependencies for RandomCharacterFactory
-            var characterPool = new[] { '0', '1', '2', '3', '4', '5' };
+            var characterPool = new[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
             var mockRandom = new Mock<Random>();
 
             // Use the Mock<Random> to 'Setup' what will be returned when the RandomCharacterFactory calls _random.Next(0, _characterPool.Length)
@@ -89,6 +63,32 @@ namespace TestingDemo.Tests
             var result = randomCharacterFactory.GetRandomCharacter();
 
             Assert.Equal(' ', result);
+        }
+
+        #endregion
+
+        #region Integration Tests
+
+        /*
+            This test would be considered an integration test due to the fact that we are testing our class while integrated with a real instance of the 
+            Random class. There is value in this test, because we are able to ensure that everything is functioning together properly. However, we are 
+            limited in a way since we cannot set up our test to assert the exact character that is returned.
+        */
+
+        [Theory]
+        [InlineData("abcdefg")]
+        [InlineData("123456")]
+        [InlineData("xyz")]
+        [InlineData("#")]
+        public void GetRandomCharacter_ShouldReturn_AnyExpectedCharacter(string expectedCharacters)
+        {
+            // Initialize the class using concrete implementation of Random class and the expected
+            var randomCharacterFactory = new RandomCharacterFactory(new Random(), expectedCharacters.ToArray());
+
+            // Call the method we are testing
+            var result = randomCharacterFactory.GetRandomCharacter();
+
+            Assert.True(expectedCharacters.Contains(result));
         }
 
         #endregion
